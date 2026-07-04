@@ -9,13 +9,13 @@ COPY mvnw mvnw
 COPY pom.xml pom.xml
 
 # Download dependencies (cached layer)
-RUN ./mvnw dependency:go-offline -B || true
+RUN mvn dependency:go-offline -B || true
 
 # Copy source code
 COPY src src
 
 # Build application
-RUN ./mvnw clean package -DskipTests -q
+RUN mvn clean package -DskipTests -q
 
 # Stage 2: Runtime stage
 FROM eclipse-temurin:17-jdk-alpine
