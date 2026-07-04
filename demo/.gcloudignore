@@ -1,0 +1,9 @@
+.git/
+.gitignore
+.idea/
+.DS_Store
+*.log
+*.iml
+.mvn/wrapper/maven-wrapper.jar
+target/
+.vscode/

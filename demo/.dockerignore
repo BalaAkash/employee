@@ -1,0 +1,9 @@
+.git
+.gitignore
+.idea
+.DS_Store
+target
+*.log
+*.md
+HELP.md
+mvnw.cmd
