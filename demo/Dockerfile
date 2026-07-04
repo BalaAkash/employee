@@ -28,10 +28,5 @@ COPY --from=builder /build/target/*.jar app.jar
 # Expose port
 EXPOSE 8080
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD java -cp app.jar -Dloader.main=com.employee.EmployeeApplication \
-    org.springframework.boot.loader.PropertiesLauncher health || exit 1
-
 # Run application
 ENTRYPOINT ["java", "-jar", "app.jar"]
